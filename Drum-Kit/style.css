@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-image:url("/Drum-Kit/photo/drums.jpg");
+    background-image:url("./photo/drums.jpg");
     height: 100%;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -26,11 +26,6 @@ body {
     border: solid white 5px;
     border-radius: 1em;
 }
-.key:active {
-    color: black;
-    background-color: white;
-}
-
 .key p {
     font-size: 1.5rem;
 }

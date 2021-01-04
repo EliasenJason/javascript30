@@ -51,18 +51,22 @@ const container = document.getElementById('container')
 
 document.addEventListener('keydown', (event) => {
     let key = event.key.toUpperCase()
-    let playThis = sounds.find(item => item.letter === key)
-    playAudio(playThis.url)
+    let ThisOne = sounds.find(item => item.letter === key)
+    playAudio(ThisOne.url)
+    activateKey(ThisOne.letter)
 })
 
 sounds.forEach(sound => {
     let child = document.createElement('section')
-    child.addEventListener('click', () => playAudio(`${sound.url}`))
+    child.addEventListener('click', () => {
+        playAudio(`${sound.url}`)
+        activateKey(sound.letter)
+    })
     child.innerHTML = `
         <h3>${sound.letter}</h3>
         <p>${sound.name}</p>
     `
-    child.classList.add(`${sound.letter}`)
+    child.id = sound.letter
     child.classList.add('key')
     container.appendChild(child)
 })
@@ -71,3 +75,12 @@ sounds.forEach(sound => {
 function playAudio(url) {
     new Audio(url).play();
   }
+
+function activateKey(letter) {
+    document.getElementById(letter).style.color = 'black'
+    document.getElementById(letter).style.backgroundColor = 'white'
+    setTimeout(() => {
+        document.getElementById(letter).style.color = 'white'
+        document.getElementById(letter).style.backgroundColor = 'black'
+    }, 100)
+}
