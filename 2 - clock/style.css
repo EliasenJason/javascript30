@@ -29,25 +29,55 @@ body {
     width: 10px;
     height: 200px;
     transform-origin: bottom;
-    transform: rotate(0deg)
+    transform: rotate(0deg);
+    z-index: 10;
+    
 }
 #minutes {
     position: absolute;
     background-color: blue;
-    margin: 150px 345px;
+    margin: 100px 345px;
     width: 10px;
-    height: 200px;
+    height: 250px;
     transform-origin: bottom;
-    transform: rotate(0deg)
+    transform: rotate(0deg);
+    z-index: 9;
 }
 #seconds {
     position: absolute;
     background-color: red;
-    margin: 150px 345px;
+    margin: 50px 345px;
     width: 10px;
-    height: 200px;
+    height: 300px;
     transform-origin: bottom;
-    transform: rotate(0deg)
+    transform: rotate(0deg);
+    z-index: 8;
+    
+}
+
+.number {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    color: rgb(219, 106, 0);
+    text-align: center;
+    font-size: 50px;
+}
+
+#one {
+    margin: 25px 325px;
+}
+
+#three {
+    margin: 325px 625px;
+}
+
+#six {
+    margin: 625px 325px;
+}
+
+#nine {
+    margin: 325px 25px;
 }
 
 #digital {
@@ -63,4 +93,10 @@ body {
     text-align: center;
     color: black;
     font-size: 190px;
+}
+.transition {
+    transition: ease-in 1s;
+}
+.no-transition {
+    transition: none;
 }
